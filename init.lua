@@ -684,6 +684,10 @@ require('lazy').setup({
 
         angularls = {},
 
+        mdx_analyzer = {
+          typescript = { enabled = true },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
