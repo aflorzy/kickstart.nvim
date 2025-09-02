@@ -351,6 +351,15 @@ require('lazy').setup({
     },
   },
 
+  {
+    'f-person/git-blame.nvim',
+    opts = {
+      enabled = true,
+      message_template = ' <author> • <date> • <<sha>> • <summary>',
+      date_format = '%r',
+    },
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
@@ -901,6 +910,10 @@ require('lazy').setup({
     },
   },
 
+  { -- Github Copilot
+    'github/copilot.vim',
+  },
+
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -914,6 +927,10 @@ require('lazy').setup({
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
+
+        on_colors = function(colors)
+          -- colors.fg_gutter = '#b2b8cf'
+        end,
       }
 
       -- Load the colorscheme here.
