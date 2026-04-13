@@ -176,6 +176,17 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.open_float, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Buffer keymaps
+vim.keymap.set('n', '<leader>br', '<cmd>bufdo e<CR>', { desc = '[B]uffer [R]eload all' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
+vim.keymap.set('n', '<leader>bo', '<cmd>%bd|e#|bd#<CR>', { desc = '[B]uffer delete [O]thers' })
+vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next [B]uffer' })
+vim.keymap.set('n', '[b', '<cmd>bprev<CR>', { desc = 'Prev [B]uffer' })
+
+-- Quickfix navigation
+vim.keymap.set('n', ']q', '<cmd>cnext<CR>', { desc = 'Next [Q]uickfix' })
+vim.keymap.set('n', '[q', '<cmd>cprev<CR>', { desc = 'Prev [Q]uickfix' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -344,6 +355,7 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
+        { '<leader>b', group = '[B]uffer' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
