@@ -979,7 +979,10 @@ require('lazy').setup({
     end,
   },
   { -- Highlight, edit, and navigate code
+    -- Pinned to v0.9.x: the rewrite (v0.10+) requires the external `tree-sitter` CLI.
+    -- v0.9.x compiles parsers with gcc/cc, which is standard on any Linux machine.
     'nvim-treesitter/nvim-treesitter',
+    version = 'v0.9.*',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

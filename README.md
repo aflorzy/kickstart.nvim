@@ -1,5 +1,25 @@
 # kickstart.nvim
 
+## Fork Notes
+
+This is a personal fork of kickstart.nvim. Changes from upstream:
+
+- **nvim-treesitter pinned to v0.9.x** — the v0.10+ rewrite requires an external `tree-sitter` CLI to compile parsers. v0.9.x uses `gcc`/`cc` instead, which is standard on any Linux machine.
+
+### Quick dependency checklist (Ubuntu/WSL)
+
+```sh
+sudo apt install make gcc ripgrep fd-find unzip git xclip neovim
+```
+
+- `gcc` — required by nvim-treesitter to compile language parsers
+- `ripgrep` — required by Telescope live grep
+- `fd-find` — improves Telescope file finding
+- `unzip` — required by Mason to install formatters/linters (e.g. stylua)
+- `xclip` — required for system clipboard integration
+
+---
+
 ## Introduction
 
 A starting point for Neovim that is:
